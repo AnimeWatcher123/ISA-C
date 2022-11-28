@@ -1,1 +1,33 @@
-hi
+#include <stdio.h>
+ 
+int main()
+{
+    int bill[12], tbill = 0;
+    char month[12][30] = {"JAN", "FEB", "MARCH", "APRIL", "MAY", "JUNE", "JULY",
+    "AUG", "SEPT", "OCT", "NOV", "DEC"};
+    
+    
+    printf("Enter Bill of ");
+    for(int i = 0; i < 12; i++) {
+        printf("%s: ", month[i]);
+        scanf("%d", &bill[i]);
+    }
+    
+    // Total Bill!
+    for(int i = 0; i < 12; i++) {
+        tbill += bill[i];
+    }
+    
+    // Total Bill Before Tax!
+    printf("\n\n");
+    printf("Total Bill Before Tax: %d\n", tbill);
+    
+    // Calculating GST of 20%
+    float gst = tbill * 0.2;
+    
+    // Total Bill After Tax!
+    printf("GST: %.2f\n", gst);
+    printf("Total Bill After Tax: %.2f\n", tbill+gst);
+    
+    return 0;
+}
